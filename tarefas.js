@@ -29,4 +29,6 @@ botao.addEventListener('click', function () {
   const novaTarefa = { nome, categoria, realizada: false };
   tarefas.push(novaTarefa);
   insereTarefaNaPagina(novaTarefa);
+
+  document.querySelector('#nova-tarefa-nome').value = '';
 });
