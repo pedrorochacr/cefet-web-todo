@@ -8,13 +8,15 @@ function insereTarefaNaPagina(tarefa) {
   const item = document.createElement('li');
 
   item.classList.add('item-tarefa');
+  item.classList.add(`categoria-${tarefa.categoria}`);
   if (tarefa.realizada) {
     item.classList.add('marcado');
   }
-  item.dataset.categoria = tarefa.categoria;
   item.textContent = tarefa.nome;
 
   lista.appendChild(item);
 }
 
+const lista = document.querySelector('#lista-tarefas');
+lista.innerHTML = '';
 tarefas.forEach(insereTarefaNaPagina);
