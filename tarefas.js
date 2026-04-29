@@ -20,3 +20,13 @@ function insereTarefaNaPagina(tarefa) {
 const lista = document.querySelector('#lista-tarefas');
 lista.innerHTML = '';
 tarefas.forEach(insereTarefaNaPagina);
+
+const botao = document.querySelector('#incluir-nova-tarefa');
+botao.addEventListener('click', function () {
+  const nome = document.querySelector('#nova-tarefa-nome').value;
+  const categoria = document.querySelector('#nova-tarefa-categoria').value;
+
+  const novaTarefa = { nome, categoria, realizada: false };
+  tarefas.push(novaTarefa);
+  insereTarefaNaPagina(novaTarefa);
+});
